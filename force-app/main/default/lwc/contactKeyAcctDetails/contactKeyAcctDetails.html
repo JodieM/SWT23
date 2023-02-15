@@ -1,0 +1,57 @@
+<template >
+    <div onload={handleLoad}>
+            <template lwc:if={smallRegion}>
+                <lightning-card title="Key Account Details" icon-name="standard:account">
+                    <div class="slds-var-m-around_medium">
+                            <lightning-record-view-form object-api-name={objectApiName} record-id={recordId}>
+                                <div class="slds-grid">
+                                    <div class="slds-col slds-size_1-of-1 slds-var-m-around_xx-small">  
+                                        <lightning-output-field field-name="AccountId" variant="label-hidden"></lightning-output-field>
+                                    </div>
+                                </div>
+                            </lightning-record-view-form>
+                            <lightning-record-form object-api-name="Account" record-id={accId} fields={accountFields} columns="2" mode="readonly">
+                            </lightning-record-form>
+                </div>
+            </lightning-card>
+            </template>
+        
+            <template lwc:elseif={mediumRegion}>
+                    <lightning-card class="slds-m-top_none">
+                        <div>
+                            <h2 slot="title" class="slds-var-p-around_small df_title_med slds-card__header-title">
+                                <lightning-icon icon-name="standard:account" size="small" class="slds-media__figure"></lightning-icon>
+                                Key Account Details
+                            </h2>
+                        </div>
+                    <div class="slds-var-p-around_small df_card_med">
+                        <lightning-record-view-form object-api-name={objectApiName} record-id={recordId}>
+                            <div class="slds-grid">
+                                <div class="slds-col slds-size_1-of-1 slds-var-m-around_xx-small">  
+                                    <lightning-output-field field-name="AccountId" variant="label-hidden"></lightning-output-field>
+                                </div>
+                            </div>
+                            </lightning-record-view-form>
+                            <lightning-record-form object-api-name="Account" record-id={accId} fields={accountFields} columns="2" mode="readonly">
+                            </lightning-record-form>
+                    </div>
+                    </lightning-card>
+            </template>
+            <template lwc:else>
+                <lightning-card title="Key Account Details" icon-name="standard:account">
+                    <div class="slds-var-m-around_small" >
+                        <lightning-record-view-form object-api-name={objectApiName} record-id={recordId}>
+                            <div class="slds-grid">
+                                <div class="slds-col slds-size_1-of-1 slds-var-m-around_xx-small">  
+                                    <lightning-output-field field-name="AccountId" variant="label-hidden"></lightning-output-field>
+                                </div>
+                            </div>
+                            </lightning-record-view-form>
+                            <lightning-record-form object-api-name="Account" record-id={accId} fields={accountFields} columns="3" mode="readonly">
+                            </lightning-record-form>
+                    </div>
+            </lightning-card>
+            </template>
+
+    </div>
+</template>

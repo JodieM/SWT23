@@ -1,0 +1,97 @@
+import { LightningElement, api, wire } from 'lwc';
+import { getRecord, getFieldValue } from 'lightning/uiRecordApi';
+
+import INDUSTRY_FIELD from '@salesforce/schema/Account.Industry';
+import ID_FIELD from '@salesforce/schema/Account.Id';
+import NAME_FIELD from '@salesforce/schema/Account.Name';
+import TYPE_FIELD from '@salesforce/schema/Account.Type';
+import CONT_FIELD from '@salesforce/schema/Contact.AccountId';
+
+const ACCT_FIELDS = [CONT_FIELD];
+
+export default class RecordViewFormDynamicContact extends LightningElement {
+    // Flexipage provides recordId and objectApiName
+    @api recordId; //Contact
+    @api objectApiName;
+    @wire(getRecord, { recordId: '$recordId', fields: ACCT_FIELDS })
+    cont;
+
+    get accId() {
+        return getFieldValue(this.cont.data, CONT_FIELD);
+    }
+
+    accountFields = [INDUSTRY_FIELD, TYPE_FIELD, ID_FIELD, NAME_FIELD];
+    contactFields = [CONT_FIELD];
+
+}
+
+<template>
+    <lightning-card title="Key Account Details" icon-name="standard:account" onload={handleLoad}>
+        <div class="slds-var-m-around_medium">
+            <!-- <lightning-record-view-form object-api-name={objectApiName} record-id={recordId}>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-output-field field-name="Name"></lightning-output-field>
+                    </div>  
+                    <div class="slds-col slds-size_1-of-2">  
+                        <lightning-output-field field-name="AccountId"></lightning-output-field>
+                    </div>
+                </div>
+                </lightning-record-view-form> -->
+                <lightning-record-form object-api-name="Account" record-id={accId} fields={accountFields} columns="2" mode="view">
+                    <!-- <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="AccountId"></lightning-output-field>
+                            <lightning-output-field field-name="Industry"></lightning-output-field>
+                        </div>  
+                        <div class="slds-col slds-size_1-of-2">  
+                            <lightning-output-field field-name="Rating"></lightning-output-field>
+                            <lightning-output-field field-name="Type"></lightning-output-field>
+                        </div>
+                    </div> -->
+                </lightning-record-form>
+        </div>
+    </lightning-card>
+</template>
+
+
+
+
+
+<template>
+    <div class={flexipageRegionWidth}>
+        <lightning-card title="Key Account Details" icon-name="standard:account" onload={handleLoad}>
+            <div class="slds-var-m-around_medium">
+                <lightning-record-view-form object-api-name={objectApiName} record-id={recordId}>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-1 slds-var-m-around_xx-small">  
+                            <lightning-output-field field-name="AccountId" variant="label-hidden"></lightning-output-field>
+                        </div>
+                    </div>
+                    </lightning-record-view-form>
+                    <lightning-record-form object-api-name="Account" record-id={accId} fields={accountFields} columns="2" mode="readonly">
+                    </lightning-record-form>
+            </div>
+        </lightning-card>
+    </div>
+</template>
+
+
+
+
+
+                <div class="label slds-card__header slds-truncate slds-section__title slds-p-around_xx-small slds-theme_shade">
+                    <div class="df_card">
+                    <div class="slds-var-m-around_small" >
+                        <lightning-record-view-form object-api-name={objectApiName} record-id={recordId}>
+                            <div class="slds-grid">
+                                <div class="slds-col slds-size_1-of-1 slds-var-m-around_xx-small">  
+                                    <lightning-output-field field-name="AccountId" variant="label-hidden"></lightning-output-field>
+                                </div>
+                            </div>
+                            </lightning-record-view-form>
+                            <lightning-record-form object-api-name="Account" record-id={accId} fields={accountFields} columns="3" mode="readonly">
+                            </lightning-record-form>
+                    </div>
+                    </div>
+                    </div>

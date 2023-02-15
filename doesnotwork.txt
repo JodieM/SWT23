@@ -1,0 +1,36 @@
+import { LightningElement, api, wire } from 'lwc';
+import { getRecord, getFieldValue } from 'lightning/uiRecordApi';
+
+import CONT_FIELD from '@salesforce/schema/Contact.AccountId';
+
+const FIELDS = [CONT_FIELD];
+
+export default class RecordViewFormDynamicContact extends LightningElement {
+    @api recordId;
+    @wire(getRecord, { recordId: '$recordId', fields: FIELDS })
+    cont;
+
+    get accId() {
+        return getFieldValue(this.cont.data, CONT_FIELD);
+    }
+
+}
+
+<template>
+    <lightning-card title="Key Account Details" icon-name="standard:account" onload={handleLoad}>
+        <div class="slds-var-m-around_medium">
+                <lightning-record-view-form object-api-name="Account" record-id={recordId}>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="AccountId"></lightning-output-field>
+                            <lightning-output-field field-name="Industry"></lightning-output-field>
+                        </div>  
+                        <div class="slds-col slds-size_1-of-2">  
+                            <lightning-output-field field-name="Rating"></lightning-output-field>
+                            <lightning-output-field field-name="Type"></lightning-output-field>
+                        </div>
+                    </div>
+                </lightning-record-view-form>
+        </div>
+    </lightning-card>
+</template>

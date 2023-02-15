@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Show__c</fullName>
+    <externalId>false</externalId>
+    <label>Show</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Nothing</fullName>
+                <default>false</default>
+                <label>Nothing</label>
+            </value>
+            <value>
+                <fullName>Related Record Components</fullName>
+                <default>false</default>
+                <label>Related Record Components</label>
+            </value>
+            <value>
+                <fullName>Key Fields</fullName>
+                <default>false</default>
+                <label>Key Fields</label>
+            </value>
+            <value>
+                <fullName>Narrow Section - Standard</fullName>
+                <default>false</default>
+                <label>Narrow Section - Standard</label>
+            </value>
+            <value>
+                <fullName>Narrow Section - LWC</fullName>
+                <default>false</default>
+                <label>Narrow Section - LWC</label>
+            </value>
+            <value>
+                <fullName>Both</fullName>
+                <default>false</default>
+                <label>Both</label>
+            </value>
+            <value>
+                <fullName>Medium Section - Standard</fullName>
+                <default>false</default>
+                <label>Medium Section - Standard</label>
+            </value>
+            <value>
+                <fullName>Medium Section - LWC</fullName>
+                <default>false</default>
+                <label>Medium Section - LWC</label>
+            </value>
+            <value>
+                <fullName>Large Section - Standard</fullName>
+                <default>false</default>
+                <label>Large Section - Standard</label>
+            </value>
+            <value>
+                <fullName>Large Section - LWC</fullName>
+                <default>false</default>
+                <label>Large Section - LWC</label>
+            </value>
+            <value>
+                <fullName>All</fullName>
+                <default>false</default>
+                <label>All</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
