@@ -461,13 +461,6 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection3</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Show__c}</leftValue>
-                        <operator>NE</operator>
-                        <rightValue>Key Fields</rightValue>
-                    </criteria>
-                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -653,18 +646,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.MobilePhone</fieldItem>
-                <identifier>RecordMobilePhoneField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Phone</fieldItem>
-                <identifier>RecordPhoneField</identifier>
+                <fieldItem>Record.InterestAreas__c</fieldItem>
+                <identifier>RecordInterestAreas_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-d6f233d1-6359-4d3f-90e1-4556446bb584</name>
@@ -677,8 +660,18 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Email</fieldItem>
-                <identifier>RecordEmailField</identifier>
+                <fieldItem>Record.LatestEventAttended__c</fieldItem>
+                <identifier>RecordLatestEventAttended_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.LastAttended__c</fieldItem>
+                <identifier>RecordLastAttended_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-b5db0288-8a50-452c-a497-b98c43038346</name>
@@ -788,7 +781,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>titleFieldName</name>
-                    <value>Key Contact Details</value>
+                    <value>Key Event Details</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>updateQuickActionName</name>
@@ -813,7 +806,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Key Contact Details</value>
+                    <value>Key Event Details</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection6</identifier>

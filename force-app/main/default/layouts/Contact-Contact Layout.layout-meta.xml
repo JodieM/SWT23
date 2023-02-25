@@ -52,6 +52,14 @@
                 <behavior>Edit</behavior>
                 <field>Show__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>LatestEventAttended__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>LastAttended__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -145,6 +153,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Description</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>InterestAreas__c</field>
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>

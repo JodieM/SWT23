@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LastAttended__c</fullName>
+    <externalId>false</externalId>
+    <formula>LatestEventAttended__r.StartDate</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>The Date of the last Event they attended.</inlineHelpText>
+    <label>Latest Attended Date</label>
+    <required>false</required>
+    <type>Date</type>
+</CustomField>
